@@ -16,23 +16,37 @@
         div.container {
         width: 100%;
         background-color: #99D2F8;
+
         }
 
         header{
+        width: 100%;
         padding: 1em;
-font-family: "Comic Sans MS", cursive, sans-serif;
+        font-family: "Comic Sans MS", cursive, sans-serif;
         color: white;
         clear: left;
         text-align: center;
         position: relative;
-        animation-name: example;
-        animation-duration: 3s;
+display:inline-block;
+overflow:hidden;
+white-space:nowrap;
+animation: showup 20s;
         }
 
-        @keyframes example {
-            0%   {top:0px;}
-            100% {top:100px;}
-        }
+@keyframes showup {
+0% {opacity:0;}
+20% {opacity:1;}
+80% {opacity:1;}
+100% {opacity:0;}
+}
+
+@keyframes reveal {
+0% {opacity:0;width:0px;}
+20% {opacity:1;width:0px;}
+30% {width:355px;}
+80% {opacity:1;}
+100% {opacity:0;width:355px;}
+}
     </style>
 
     </head>
@@ -40,12 +54,10 @@ font-family: "Comic Sans MS", cursive, sans-serif;
     <body>
         <div class="container">
         <header>
-            <h1 style="font-size:70px;"> Happy Thoughts</h1>
+            <div class = "title"><h1 style="font-size:70px;"> Happy Thoughts</h1></div>
             <p style="font-size:40px;">Grow the field with a happy thought...</p>
         </header>
-
-        <img src="field.png" alt="there should be a pic :P" style="max-width:100%;height:auto;">
         </div>
-
+        <img src="field.png" alt="there should be a pic :P" style="max-width:100%;height:auto;">
     </body>
 </html>
