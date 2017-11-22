@@ -3,6 +3,8 @@ const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 3000;
+const mongoose = require('./db.js');
+const Thought = mongoose.model('Thought');
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, 'public'))); // location of scripts and styles
@@ -13,22 +15,25 @@ app.get("/", function(req, res){
     res.render("index");
 });
 
-app.get("/", function(req, res) {
+app.post("/api/create", function(req, res) {
 
+    var date = new Date();
+
+
+    console.log("POST request received");
+
+    Thought.create({
+        text: "this is a test",
+        dateTime: date.getTime().toString()
+    }, function(err, thought) {
+        if (err) {
+            console.error("Error creating new thought: " + err);
+        } else {
+            console.log("done");
+        }
+    });
 });
 
 app.listen(port, function(){
     console.log("Listening on port " + port);
 });
-
-// Database
-const mongoose = require('mongoose');
-var testUser = "test";
-var testPass = "test";
-
-var thoughtSchema = mongoose.Schema({
-    text: {type: String, required: true},
-    dateTime: {type: String, required: true}
-});
-
-mongoose.model('Thought', thoughtSchema, 'thoughts');
