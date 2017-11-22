@@ -6,20 +6,46 @@
         <meta name="description" content="Share your happy thoughts">
         <meta name="keywords" content="happy, thoughts">
         <meta name="author" content="Kelly Xu, Humad Syed">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
         <link href="/styles/style.css" rel="stylesheet"/>
+
+    <style>
+        div.container {
+        width: 100%;
+        background-color: #99D2F8;
+        }
+
+        header{
+        padding: 1em;
+font-family: "Comic Sans MS", cursive, sans-serif;
+        color: white;
+        clear: left;
+        text-align: center;
+        position: relative;
+        animation-name: example;
+        animation-duration: 3s;
+        }
+
+        @keyframes example {
+            0%   {top:0px;}
+            100% {top:100px;}
+        }
+    </style>
+
     </head>
 
     <body>
         <div class="container">
-        <h1> HappyThoughts </h1>
-        <img src="field.png" alt="there should be a pic :P" style="width:1000px;height:600px;">
+        <header>
+            <h1 style="font-size:70px;"> Happy Thoughts</h1>
+            <p style="font-size:40px;">Grow the field with a happy thought...</p>
+        </header>
+
+        <img src="field.png" alt="there should be a pic :P" style="max-width:100%;height:auto;">
         </div>
 
-        <div style="background-color:green;color:white;padding:20px;">
-        <p>Grow the field with a happy thought...</p>
-        </div>
     </body>
 </html>
